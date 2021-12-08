@@ -9,6 +9,24 @@ if (empty($_SESSION['username'])) {
 
 ?>
 
+<?php
+if (isset($_POST['save'])) {
+    $fname = $_POST['fname'];
+    $mname = $_POST['mname'];
+    $lname = $_POST['lname'];
+
+    $result = $con->prepare("INSERT INTO studinfo (fname,mname,lname) VALUES (?,?,?)")
+        ->execute([$fname, $mname, $lname]);
+
+    if ($result) {
+        header('location:index.php');
+    } else {
+        echo "error";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,21 +76,3 @@ if (empty($_SESSION['username'])) {
 </body>
 
 </html>
-
-<?php
-if (isset($_POST['save'])) {
-    $fname = $_POST['fname'];
-    $mname = $_POST['mname'];
-    $lname = $_POST['lname'];
-
-    $result = $con->prepare("INSERT INTO studinfo (fname,mname,lname) VALUES (?,?,?)")
-        ->execute([$fname, $mname, $lname]);
-
-    if ($result) {
-        header('location:index.php');
-    } else {
-        echo "error";
-    }
-}
-
-?>
