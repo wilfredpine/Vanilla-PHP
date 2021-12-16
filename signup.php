@@ -9,25 +9,6 @@ if (!empty($_SESSION['username'])) {
 
 ?>
 
-<?php
-
-if (isset($_POST['signup'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm = $_POST['confirm'];
-    if ($password == $confirm) {
-        $result = $con->prepare("INSERT INTO login (username,password) VALUES (?,?)")->execute([$username, $password]);
-        if ($result) {
-            header('location:login.php');
-        } else {
-            echo "error";
-        }
-    } else {
-        echo "password did not match";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,6 +39,25 @@ if (isset($_POST['signup'])) {
                     <div class="form-signin">
 
                         <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+
+
+                        <?php
+                            if (isset($_POST['signup'])) {
+                                $username = $_POST['username'];
+                                $password = $_POST['password'];
+                                $confirm = $_POST['confirm'];
+                                if ($password == $confirm) {
+                                    $result = $con->prepare("INSERT INTO login (username,password) VALUES (?,?)")->execute([$username, $password]);
+                                    if ($result) {
+                                        header('location:login.php');
+                                    } else {
+                                        echo "error";
+                                    }
+                                } else {
+                                    echo "password did not match";
+                                }
+                            }
+                        ?>
 
                         <form method="post">
                             <div class="form-floating mb-3">

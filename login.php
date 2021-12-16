@@ -9,26 +9,6 @@ if (!empty($_SESSION['username'])) {
 
 ?>
 
-
-<?php
-if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $query = "SELECT * from login WHERE username='" . $password . "' && password='" . $password . "'";
-    $result = $con->query($query)->fetch();
-
-    if ($result) {
-        if ($result['username'] == $_POST['username'] && $result['password'] == $_POST['password']) {
-            $_SESSION['username'] = $result['username'];
-            header('location:index.php');
-        }
-    } else {
-        echo "error";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,6 +39,27 @@ if (isset($_POST['login'])) {
                     <div class="form-signin">
 
                         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+
+                        <?php
+                            if (isset($_POST['login'])) {
+                                $username = $_POST['username'];
+                                $password = $_POST['password'];
+
+                                $query = "SELECT * from login WHERE username='" . $password . "' && password='" . $password . "'";
+                                $result = $con->query($query)->fetch();
+
+                                if ($result) {
+                                    if ($result['username'] == $_POST['username'] && $result['password'] == $_POST['password']) {
+                                        $_SESSION['username'] = $result['username'];
+                                        header('location:index.php');
+                                    }
+                                } else {
+                                    echo "error";
+                                }
+                            }
+                        ?>
+
 
                         <form method="post">
 

@@ -1,6 +1,10 @@
 # Native PHP
 
-### Create
-### Retrieve
-### Update
-### Delete
+### CRUD
+- Create
+- Retrieve
+- Update
+- Delete
+
+### MySQL PDO Database 
+https://phpdelusions.net/pdo

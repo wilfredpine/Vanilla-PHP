@@ -9,32 +9,17 @@ if (empty($_SESSION['username'])) {
 
 ?>
 
-<?php
-if (isset($_POST['save'])) {
-    $fname = $_POST['fname'];
-    $mname = $_POST['mname'];
-    $lname = $_POST['lname'];
-
-    $result = $con->prepare("INSERT INTO studinfo (fname,mname,lname) VALUES (?,?,?)")
-        ->execute([$fname, $mname, $lname]);
-
-    if ($result) {
-        header('location:index.php');
-    } else {
-        echo "error";
-    }
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- include your header here -->
 <?php include('includes/header.php'); ?>
 
 <body>
     <main>
 
+        <!-- include your menubar here -->
         <?php include('includes/navbar.php'); ?>
 
         <div class="container">
@@ -45,6 +30,24 @@ if (isset($_POST['save'])) {
 
                         <h1 class="h3 mb-3 fw-normal">Add Student</h1>
                         <hr><br>
+
+
+                        <?php
+                            if (isset($_POST['save'])) {
+                                $fname = $_POST['fname'];
+                                $mname = $_POST['mname'];
+                                $lname = $_POST['lname'];
+
+                                $result = $con->prepare("INSERT INTO studinfo (fname,mname,lname) VALUES (?,?,?)")
+                                    ->execute([$fname, $mname, $lname]);
+
+                                if ($result) {
+                                    header('location:index.php');
+                                } else {
+                                    echo "error";
+                                }
+                            }
+                        ?>
 
                         <form method="post">
                             <div class="form-floating mb-3">
