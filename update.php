@@ -21,9 +21,9 @@ if (empty($_SESSION['username'])) {
 
         <div class="container">
             <div class="row mb-3">
-                <div class="col-md-12 text-center mt-5">
+                <div class="col-md-12 mt-5">
 
-                    <div class="form-signin">
+                    <div class="col-md-4 form-signin">
 
                         <h1 class="h3 mb-3 fw-normal">Edit Student</h1>
                         <hr>
@@ -55,25 +55,25 @@ if (empty($_SESSION['username'])) {
                         ?>
 
                         <form method="post">
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <input type="hidden" name="id" value="<?php echo $data['id']; ?>" class="form-control">
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <label>First Name</label>
                                 <input type="text" name="fname" value="<?php echo $data['fname']; ?>"
                                     class="form-control" required>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <label>Middle Name</label>
                                 <input type="text" name="mname" value="<?php echo $data['mname']; ?>"
                                     class="form-control" required>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <label>Last Name</label>
                                 <input type="text" name="lname" value="<?php echo $data['lname']; ?>"
                                     class="form-control" required>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <input type="submit" name="update" class="btn btn-success btn-lg" value="Update">
                             </div>
                         </form>

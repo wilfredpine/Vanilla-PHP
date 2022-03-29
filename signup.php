@@ -17,6 +17,7 @@ if (!empty($_SESSION['username'])) {
 <body>
     <main>
 
+        <!-- Top Bar -->
         <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="First navbar example">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarsExample01">
@@ -34,9 +35,9 @@ if (!empty($_SESSION['username'])) {
 
         <div class="container">
             <div class="row mb-3">
-                <div class="col-md-12 text-center mt-5">
+                <div class="col-md-12 mt-5">
 
-                    <div class="form-signin">
+                    <div class="col-md-4 form-signin">
 
                         <h1 class="h3 mb-3 fw-normal">Create Account</h1>
 
@@ -60,19 +61,19 @@ if (!empty($_SESSION['username'])) {
                         ?>
 
                         <form method="post">
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <label>Username</label>
                                 <input type="text" name="username" class="form-control" required>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <label>Password</label>
                                 <input type="password" name="password" class="form-control" required>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <label>Confirm Password</label>
                                 <input type="password" name="confirm" class="form-control" required>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <input type="submit" value="Sign Up" class="btn btn-success btn-lg" name="signup">
                             </div>
                         </form>

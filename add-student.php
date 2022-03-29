@@ -24,9 +24,9 @@ if (empty($_SESSION['username'])) {
 
         <div class="container">
             <div class="row mb-3">
-                <div class="col-md-12 text-center mt-5">
+                <div class="col-md-12 mt-5">
 
-                    <div class="form-signin">
+                    <div class="col-md-4 form-signin">
 
                         <h1 class="h3 mb-3 fw-normal">Add Student</h1>
                         <hr><br>
@@ -50,19 +50,19 @@ if (empty($_SESSION['username'])) {
                         ?>
 
                         <form method="post">
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <label>First Name</label>
                                 <input type="text" class="form-control" name="fname" required>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <label>Middle Name</label>
                                 <input type="text" class="form-control" name="mname" required>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <label>Last Name</label>
                                 <input type="text" class="form-control" name="lname" required>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-group mb-3">
                                 <input type="submit" class="btn btn-success btn-lg" name="save" value="Save">
                             </div>
                         </form>
