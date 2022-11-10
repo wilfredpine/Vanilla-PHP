@@ -1,4 +1,4 @@
-# Native PHP
+# Vanilla PHP CRUD
 
 ### CRUD
 - Create
@@ -6,5 +6,5 @@
 - Update
 - Delete
 
-### MySQL PDO Database 
+### MySQL PDO (Database) 
 https://phpdelusions.net/pdo
